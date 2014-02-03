@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.imagePicker = [[RBImagePickerController alloc] init];
     self.imagePicker.sourceDelegate = self;
-    self.imagePicker.selectionType = RBMultipleSelectionType;
+    self.imagePicker.selectionType = RBMultipleImageSelectionType;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

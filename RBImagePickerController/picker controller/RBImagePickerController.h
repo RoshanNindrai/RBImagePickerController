@@ -18,8 +18,8 @@
 
 typedef enum {
     
-    RBSingleSelectionType,
-    RBMultipleSelectionType
+    RBSingleImageSelectionType,
+    RBMultipleImageSelectionType
     
 } RBSelectionType;
 

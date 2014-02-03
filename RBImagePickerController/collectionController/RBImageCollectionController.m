@@ -120,7 +120,7 @@
     
     [cell.contentView addSubview:cell.assetImage];
     
-    if([self.pickerDelegate selectionType] != RBSingleSelectionType ){
+    if([self.pickerDelegate selectionType] != RBSingleImageSelectionType ){
     
         if([self.selected_images_index containsObject:indexPath]){
      
@@ -181,7 +181,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         [self.selected_images_index removeObject:indexPath];
 
     }
-    if([self.pickerDelegate selectionType] == RBSingleSelectionType){
+    if([self.pickerDelegate selectionType] == RBSingleImageSelectionType){
         
         [self.pickerDelegate finishPickingImages];
     }

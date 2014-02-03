@@ -27,7 +27,7 @@
     if(self.assetCollection.title == nil){
         self.assetCollection.navigationItem.title = @"Photos";
     }
-    if(self.selectionType != RBSingleSelectionType){
+    if(self.selectionType != RBSingleImageSelectionType){
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Done"
