@@ -29,14 +29,20 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)didFinishSelectingImages:(NSArray *)selectedImages{
+-(void)didFinishPickingImages:(NSArray *)selectedImages{
     
+    // the image picker is desmissed internally.
     for (UIImage *image in selectedImages) {
         NSLog(@"%@", image);
     }
     
 }
 
+-(void)imagePickerDidCancel:(RBImagePickerController *)imagePicker{
+    
+     [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 - (IBAction)onShow:(id)sender {
     

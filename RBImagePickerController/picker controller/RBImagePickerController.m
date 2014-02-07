@@ -75,7 +75,8 @@
 
 -(void)onCancel:(id)sender{
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.sourceDelegate imagePickerDidCancel:self];
+   
     
 }
 
@@ -87,7 +88,7 @@
 
 -(void)finishPickingImages{
     
-    [self.sourceDelegate didFinishSelectingImages:[self.assetCollection getSelectedAssets]];
+    [self.sourceDelegate didFinishPickingImages:[self.assetCollection getSelectedAssets]];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

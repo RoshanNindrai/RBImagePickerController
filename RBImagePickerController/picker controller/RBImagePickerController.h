@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-
 @protocol RBImagePickerDelegate <NSObject>
 
 @required
--(void)didFinishSelectingImages:(NSArray *)selectedImages;
-
+-(void)didFinishPickingImages:(NSArray *)selectedImages;
+-(void)imagePickerDidCancel:(id)imagePicker;
 @end
+
 
 typedef enum {
     
@@ -25,8 +25,6 @@ typedef enum {
 
 @interface RBImagePickerController : UINavigationController
 
-
-
 //title of the navigation bar
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) id<RBImagePickerDelegate> sourceDelegate;
@@ -34,3 +32,4 @@ typedef enum {
 
 -(void)finishPickingImages;
 @end
+
