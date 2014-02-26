@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7714DD5F-58A3-4DD5-8BED-4108B2CC6343</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RBImagePickerDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>329E2B94-16C2-4B28-9EC4-8B7081D67BD0</key>
+		<string>https://github.com/saran87/RBImagePickerController.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RBImagePickerDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>329E2B94-16C2-4B28-9EC4-8B7081D67BD0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/saran87/RBImagePickerController.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>329E2B94-16C2-4B28-9EC4-8B7081D67BD0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>329E2B94-16C2-4B28-9EC4-8B7081D67BD0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RBImagePickerController</string>
+		</dict>
+	</array>
+</dict>
+</plist>
