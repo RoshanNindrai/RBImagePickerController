@@ -1,7 +1,7 @@
 RBImagePickerController
 =======================
 
-This cantroller can be used to pick one or more images from the photo library. This project consicts of a demo application to unsderstand the use of this controller.
+This controller can be used to pick one or more images from the photo library. This project consicts of a demo application for the sake of understanding.
 
 Installation
 =======================
