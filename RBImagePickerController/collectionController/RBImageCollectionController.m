@@ -16,6 +16,7 @@
 
 @property(nonatomic, strong) NSMutableDictionary *selected_images;
 @property(nonatomic, strong) NSMutableArray *selected_images_index;
+
 @end
 
 @implementation RBImageCollectionController

@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
     self.imagePicker = [[RBImagePickerController alloc] init];
-    self.imagePicker.sourceDelegate = self;
+    self.imagePicker.delegate = self;
     self.imagePicker.selectionType = RBMultipleImageSelectionType;
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -29,16 +29,16 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)didFinishPickingImages:(NSArray *)selectedImages{
+-(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images{
     
     // the image picker is desmissed internally.
-    for (UIImage *image in selectedImages) {
+    for (UIImage *image in images) {
         NSLog(@"%@", image);
     }
     
 }
 
--(void)imagePickerDidCancel:(RBImagePickerController *)imagePicker{
+-(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker{
     
      [self dismissViewControllerAnimated:YES completion:nil];
     

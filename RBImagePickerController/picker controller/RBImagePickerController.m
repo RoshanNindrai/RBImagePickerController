@@ -8,6 +8,7 @@
 
 #import "RBImagePickerController.h"
 #import "RBImageCollectionController.h"
+
 @interface RBImagePickerController ()
 
 @property(nonatomic, strong) RBImageCollectionController *assetCollection;
@@ -75,7 +76,7 @@
 
 -(void)onCancel:(id)sender{
     
-    [self.sourceDelegate imagePickerDidCancel:self];
+    [self.delegate imagePickerControllerDidCancel:self];
    
     
 }
@@ -88,7 +89,7 @@
 
 -(void)finishPickingImages{
     
-    [self.sourceDelegate didFinishPickingImages:[self.assetCollection getSelectedAssets]];
+    [self.delegate imagePickerController:self didFinishPickingImages:[self.assetCollection getSelectedAssets]];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

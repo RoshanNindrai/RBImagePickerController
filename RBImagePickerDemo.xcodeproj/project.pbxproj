@@ -73,6 +73,7 @@
 		6A7677CF1899F84B0026EAE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A7677D11899F84B0026EAE0 /* RBImagePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBImagePickerTests.m; sourceTree = "<group>"; };
 		6A7677E01899F90C0026EAE0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		6AF6C3D218FEE22000165171 /* RBImagePickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBImagePickerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 		6A54800E18A0283C00F4D79E /* RBImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
+				6AF6C3D018FEE1FA00165171 /* Protocol */,
 				6A54800F18A0283C00F4D79E /* Asset Class */,
 				6A54801218A0283C00F4D79E /* collectioncell */,
 				6A54801518A0283C00F4D79E /* collectionController */,
@@ -233,6 +235,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6AF6C3D018FEE1FA00165171 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6AF6C3D218FEE22000165171 /* RBImagePickerDelegate.h */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,7 +288,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RB;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Uniq Labs";
 				TargetAttributes = {
 					6A7677C31899F84B0026EAE0 = {
@@ -394,7 +404,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -434,7 +443,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -493,7 +501,6 @@
 		6A7677D91899F84B0026EAE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RBImagePicker.app/RBImagePicker";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -516,7 +523,6 @@
 		6A7677DA1899F84B0026EAE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RBImagePicker.app/RBImagePicker";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
