@@ -27,7 +27,16 @@ Usage
  
       RBSingleImageSelectionType //for selecting single image from the photo library 
       RBMultipleImageSelectionType // for selecting multiple images from photo library
+
+
+ Once the images are selected from the photo library by the user, the selected images are obtained from the delegate method
+ 
+      -(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images
       
+  The image picker is automatically dismissed once the user os done with selection. If the user wants to cancel without selecting any images The following methods can be used to dismiss the imagePickerController.
+  
+      -(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker
+  
 Screenshots
 =======================
 
