@@ -33,7 +33,7 @@ Usage
  
       -(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images
       
-  The image picker is automatically dismissed once the user os done with selection. If the user wants to cancel without selecting any images The following methods can be used to dismiss the imagePickerController.
+  The image picker is automatically dismissed once the user is done with selection. If the user wants to cancel without selecting any images The action can be recognized by the following delegate method.
   
       -(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker
   
