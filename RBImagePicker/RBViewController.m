@@ -20,6 +20,7 @@
     self.imagePicker = [[RBImagePickerController alloc] init];
     self.imagePicker.delegate = self;
     self.imagePicker.selectionType = RBMultipleImageSelectionType;
+    self.imagePicker.navigationController.navigationItem.leftBarButtonItem.title = @"no";
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
