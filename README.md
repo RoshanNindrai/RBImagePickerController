@@ -46,6 +46,12 @@ Multiple selection type
 
 ![ScreenShot](https://raw.githubusercontent.com/RoshanNindrai/RBImagePickerController/master/Screenshots/image%20picker%20with%20selections.png)
 
+TO DO:
+============
+
+1. To add support for controlling the amount of images that can be selected.
+2. To display the # of pictures that are currently selected.
+
 LICENSE:
 ============
   RBImagePickerController is available under The MIT License (MIT)
