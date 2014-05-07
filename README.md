@@ -37,7 +37,7 @@ Usage
   
       -(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker
   
-  4 The number of images that are selected by the user can also be throttled. 
+ 4 The number of images that are selected by the user can also be throttled. 
   
     (I) to set the minimum number of image to be selected by the user the following datasource method is used
   
