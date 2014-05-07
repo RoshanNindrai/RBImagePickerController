@@ -21,6 +21,7 @@ Usage
  
         self.imagePicker = [[RBImagePickerController alloc] init];
         self.imagePicker.delegate = self;
+        self.imagePicker.dataSource = self // To control selection count
         self.imagePicker.selectionType = RBMultipleImageSelectionType;
       
  There are two selectiontypes provided with the controller.
