@@ -84,9 +84,9 @@
 
 -(void)assignMaxSelectionCount{
     
-    if ([self.delegate respondsToSelector:@selector(imagePickerControllerMaxSelectionCount:)]) {
+    if ([self.dataSource respondsToSelector:@selector(imagePickerControllerMaxSelectionCount:)]) {
         
-         self.assetCollection.maxSelectionCount = [self.delegate imagePickerControllerMaxSelectionCount:self];
+         self.assetCollection.maxSelectionCount = [self.dataSource imagePickerControllerMaxSelectionCount:self];
         
     }
     else{
@@ -98,9 +98,9 @@
 
 -(void)assignMinSelectionCount{
     
-    if ([self.delegate respondsToSelector:@selector(imagePickerControllerMinSelectionCount:)]) {
+    if ([self.dataSource respondsToSelector:@selector(imagePickerControllerMinSelectionCount:)]) {
         
-        self.assetCollection.minSelectionCount = [self.delegate imagePickerControllerMinSelectionCount:self];
+        self.assetCollection.minSelectionCount = [self.dataSource imagePickerControllerMinSelectionCount:self];
         
     }
     else{

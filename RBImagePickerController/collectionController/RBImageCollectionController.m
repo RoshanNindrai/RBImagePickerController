@@ -40,7 +40,8 @@
 - (id)initWithCollectionViewLayout:(UICollectionViewLayout *)layout{
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
-        // additional setup here if required.
+        self.minSelectionCount = 0;
+        self.maxSelectionCount = 0;
     }
     return self;
 }
@@ -190,7 +191,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 -(BOOL)didReachMinCount
 {
     
-    if([self.selected_images_index count] < self.minSelectionCount || self.minSelectionCount == 0)
+    if([self.selected_images_index count] < self.minSelectionCount )
     {
         
         return NO;

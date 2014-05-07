@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RBImagePickerController.h"
 
-@interface RBViewController : UIViewController<RBImagePickerDelegate, UINavigationControllerDelegate>
+@interface RBViewController : UIViewController<RBImagePickerDelegate, UINavigationControllerDelegate, RBImagePickerDataSource>
 
 
 @property (strong, nonatomic) IBOutlet UIButton *showImage;

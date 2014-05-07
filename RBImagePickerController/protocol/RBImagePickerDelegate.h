@@ -18,7 +18,5 @@
 
 @optional
 -(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker;
--(NSInteger)imagePickerControllerMaxSelectionCount:(RBImagePickerController *)imagePicker;
--(NSInteger)imagePickerControllerMinSelectionCount:(RBImagePickerController *)imagePicker;
 
 @end

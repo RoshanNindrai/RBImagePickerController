@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RBImagePickerDelegate.h"
-
+#import "RBImagePickerDataSource.h"
 typedef enum {
     
     RBSingleImageSelectionType,
@@ -21,6 +21,7 @@ typedef enum {
 //title of the navigation bar
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, weak) id<RBImagePickerDelegate, UINavigationControllerDelegate>delegate;
+@property(nonatomic, weak) id<RBImagePickerDataSource, UINavigationControllerDelegate>dataSource;
 @property(nonatomic) RBSelectionType selectionType;
 
 -(void)finishPickingImages;
