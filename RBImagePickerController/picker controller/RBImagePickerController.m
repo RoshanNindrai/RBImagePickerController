@@ -23,7 +23,8 @@
    
     self.assetCollection = [[RBImageCollectionController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
     self.assetCollection.pickerDelegate = self;
-    
+    [self assignMaxSelectionCount];
+    [self assignMinSelectionCount];
     self.assetCollection.navigationController.title = self.title;
     if(self.assetCollection.title == nil){
         self.assetCollection.navigationItem.title = @"Photos";
@@ -79,6 +80,34 @@
     [self.delegate imagePickerControllerDidCancel:self];
    
     
+}
+
+-(void)assignMaxSelectionCount{
+    
+    if ([self.delegate respondsToSelector:@selector(imagePickerControllerMaxSelectionCount:)]) {
+        
+         self.assetCollection.maxSelectionCount = [self.delegate imagePickerControllerMaxSelectionCount:self];
+        
+    }
+    else{
+        
+        self.assetCollection.maxSelectionCount = 0;
+        
+    }
+}
+
+-(void)assignMinSelectionCount{
+    
+    if ([self.delegate respondsToSelector:@selector(imagePickerControllerMinSelectionCount:)]) {
+        
+        self.assetCollection.minSelectionCount = [self.delegate imagePickerControllerMinSelectionCount:self];
+        
+    }
+    else{
+        
+        self.assetCollection.minSelectionCount = 0;
+        
+    }
 }
 
 -(void)onDone:(id)sender{

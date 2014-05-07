@@ -8,7 +8,6 @@
 
 #import "RBImageCollectionController.h"
 #import "ALAsset+RBAsset.h"
-
 #define CELLIDENTIFIER @"assetcell"
 #define ASSET_WIDTH_HEIGHT 75
 
@@ -44,6 +43,14 @@
         // additional setup here if required.
     }
     return self;
+}
+
+-(void)setMinSelectionCount:(NSInteger)minSelectionCount
+{
+    
+    self->_minSelectionCount = MIN(self.maxSelectionCount, minSelectionCount);
+        
+    
 }
 
 - (void)viewDidLoad
@@ -114,7 +121,8 @@
 - (RBImageCollectionCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
    
-    RBImageCollectionCell *cell = (RBImageCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELLIDENTIFIER forIndexPath:indexPath];
+    RBImageCollectionCell *cell = (RBImageCollectionCell *)[collectionView
+                                                            dequeueReusableCellWithReuseIdentifier:CELLIDENTIFIER forIndexPath:indexPath];
     
     ALAsset *asset = self.assets[indexPath.row];
     [cell setImageAsset:asset];
@@ -165,29 +173,38 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     
 }
 
-- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+-(BOOL)didReachMaxCount
 {
-    if(![self.selected_images_index containsObject:indexPath]){
     
-        ALAsset *asset = self.assets[indexPath.row];
-        ALAssetRepresentation *defaultRep = [asset defaultRepresentation];
-        UIImage *image = [UIImage imageWithCGImage:[defaultRep fullScreenImage] scale:[defaultRep scale] orientation:0];
-        [self.selected_images setObject:image forKey:indexPath];
-        [self.selected_images_index addObject:indexPath];
+    if([self.selected_images_index count] <= self.maxSelectionCount || self.maxSelectionCount == 0)
+    {
+        
+        return NO;
         
     }
-    else{
-        
-        [self.selected_images removeObjectForKey:indexPath];
-        [self.selected_images_index removeObject:indexPath];
+    
+    return YES;
+    
+}
 
-    }
-    if([self.pickerDelegate selectionType] == RBSingleImageSelectionType){
+-(BOOL)didReachMinCount
+{
+    
+    if([self.selected_images_index count] < self.minSelectionCount || self.minSelectionCount == 0)
+    {
         
-        [self.pickerDelegate finishPickingImages];
+        return NO;
+        
     }
     
-    if([self.selected_images_index count] != 0){
+    return YES;
+    
+}
+
+-(void)showHideCompletionOption
+{
+    
+    if(([self.selected_images_index count] != 0  && ![self didReachMaxCount] && [self didReachMinCount])){
         
         [self.navigationItem.rightBarButtonItem setEnabled:YES];
         
@@ -198,6 +215,50 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         
     }
 
+}
+
+-(void)selectAssestAtIndexPath:(NSIndexPath* )indexPath
+{
+    
+    ALAsset *asset = self.assets[indexPath.row];
+    ALAssetRepresentation *defaultRep = [asset defaultRepresentation];
+    UIImage *image = [UIImage imageWithCGImage:[defaultRep fullScreenImage] scale:[defaultRep scale] orientation:0];
+    [self.selected_images setObject:image forKey:indexPath];
+    [self.selected_images_index addObject:indexPath];
+    
+    
+}
+
+-(void)deselectSelectedImageFromIndexpath:(NSIndexPath *)indexPath
+{
+    
+    [self.selected_images removeObjectForKey:indexPath];
+    [self.selected_images_index removeObject:indexPath];
+    
+}
+
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    
+    if(![self.selected_images_index containsObject:indexPath]){
+    
+        [self selectAssestAtIndexPath:indexPath];
+        
+    }
+    else{
+        
+        [self deselectSelectedImageFromIndexpath:indexPath];
+
+    }
+    
+    if([self.pickerDelegate selectionType] == RBSingleImageSelectionType){
+        
+        [self.pickerDelegate finishPickingImages];
+    }
+    
+    [self showHideCompletionOption];
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
 }
 

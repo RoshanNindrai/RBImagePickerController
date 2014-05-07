@@ -16,6 +16,8 @@
 @property(nonatomic, strong)ALAsset *imageAsset;
 @property(nonatomic, strong)NSArray *assets;
 @property(nonatomic, strong)UIColor* backGroundColor;
+@property(nonatomic)NSInteger maxSelectionCount;
+@property(nonatomic)NSInteger minSelectionCount;
 @property(nonatomic, strong)RBImagePickerController *pickerDelegate;
 
 -(NSArray *)getSelectedAssets;

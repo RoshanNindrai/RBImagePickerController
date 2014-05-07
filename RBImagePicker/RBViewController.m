@@ -50,4 +50,19 @@
     [self presentViewController:self.imagePicker animated:YES completion:nil];
     
 }
+
+-(NSInteger)imagePickerControllerMaxSelectionCount:(RBImagePickerController *)imagePicker
+{
+    
+    return 2;
+    
+}
+
+-(NSInteger)imagePickerControllerMinSelectionCount:(RBImagePickerController *)imagePicker
+{
+    
+    return 1;
+    
+}
+
 @end
