@@ -28,8 +28,8 @@ Usage
       RBSingleImageSelectionType //for selecting single image from the photo library 
       RBMultipleImageSelectionType // for selecting multiple images from photo library
 
-4. The number of images that are selected by the user can also be throttled. 
-  
+ 4. The number of images that are selected by the user can also be throttled. 
+   
     (I) to set the minimum number of image to be selected by the user the following datasource method is used
   
         -(NSInteger)imagePickerControllerMinSelectionCount:(RBImagePickerController *)imagePicker
@@ -37,9 +37,8 @@ Usage
     (II) to set the maximum number of image to be selected by the user the following datasource method is used
   
         -(NSInteger)imagePickerControllerMaxSelectionCount:(RBImagePickerController *)imagePicker
-  
 
- Once the images are selected from the photo library by the user, the selected images are obtained from the delegate method
+Once the images are selected from the photo library by the user, the selected images are obtained from the delegate method
  
       -(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images
       
