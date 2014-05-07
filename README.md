@@ -37,6 +37,16 @@ Usage
   
       -(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker
   
+  4 The number of images that are selected by the user can also be throttled. 
+  
+    (I) to set the minimum number of image to be selected by the user the following datasource method is used
+  
+        -(NSInteger)imagePickerControllerMinSelectionCount:(RBImagePickerController *)imagePicker
+  
+    (II) to set the maximum number of image to be selected by the user the following datasource method is used
+  
+        -(NSInteger)imagePickerControllerMaxSelectionCount:(RBImagePickerController *)imagePicker
+  
 Screenshots
 =======================
 
@@ -49,8 +59,7 @@ Multiple selection type
 TO DO:
 ============
 
-1. To add support for controlling the amount of images that can be selected.
-2. To display the # of pictures that are currently selected.
+1. To display the # of pictures that are currently selected.
 
 LICENSE:
 ============
