@@ -1,7 +1,7 @@
 RBImagePickerController
 =======================
 
-This cantroller can be used to pick one or more images from the photo library. This project consicts of a demo application to unsderstand the use of this controller.
+This controller can be used to pick one or more images from the photo library. This project consicts of a demo application for the sake of understanding.
 
 Installation
 =======================
@@ -27,7 +27,26 @@ Usage
  
       RBSingleImageSelectionType //for selecting single image from the photo library 
       RBMultipleImageSelectionType // for selecting multiple images from photo library
+
+ 4. The number of images that are selected by the user can also be throttled. 
+   
+    (I) to set the minimum number of image to be selected by the user the following datasource method is used
+  
+        -(NSInteger)imagePickerControllerMinSelectionCount:(RBImagePickerController *)imagePicker
+  
+    (II) to set the maximum number of image to be selected by the user the following datasource method is used
+  
+        -(NSInteger)imagePickerControllerMaxSelectionCount:(RBImagePickerController *)imagePicker
+
+Once the images are selected from the photo library by the user, the selected images are obtained from the delegate method
+ 
+      -(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images
       
+  The image picker is automatically dismissed once the user is done with selection. If the user wants to cancel without selecting any images The action can be recognized by the following delegate method.
+  
+      -(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker
+      
+
 Screenshots
 =======================
 
@@ -36,6 +55,11 @@ Screenshots
 Multiple selection type
 
 ![ScreenShot](https://raw.githubusercontent.com/RoshanNindrai/RBImagePickerController/master/Screenshots/image%20picker%20with%20selections.png)
+
+TO DO:
+============
+
+1. To display the # of pictures that are currently selected.
 
 LICENSE:
 ============
