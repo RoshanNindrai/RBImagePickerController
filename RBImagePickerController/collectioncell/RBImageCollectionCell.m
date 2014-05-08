@@ -43,7 +43,7 @@
 -(void)highlightCell{
     
     UIView *darkTint = [[UIView alloc] init];
-    darkTint.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.4];
+    darkTint.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.7];
     darkTint.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     [self.contentView addSubview:darkTint];
     UIImageView *checkMark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:CHECKMARK]];
