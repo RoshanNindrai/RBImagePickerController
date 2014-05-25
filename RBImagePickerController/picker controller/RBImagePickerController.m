@@ -17,6 +17,10 @@
 
 @implementation RBImagePickerController
 
+NSString * const TITLE = @"Photos";
+NSString * const DONE = @"Done";
+NSString * const CANCEL = @"Cancel";
+
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
@@ -25,14 +29,11 @@
     self.assetCollection.pickerDelegate = self;
     [self assignMaxSelectionCount];
     [self assignMinSelectionCount];
-    self.assetCollection.navigationController.title = self.title;
-    if(self.assetCollection.title == nil){
-        self.assetCollection.navigationItem.title = @"Photos";
-    }
+    self.assetCollection.navigationItem.title = TITLE;
     if(self.selectionType != RBSingleImageSelectionType){
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Done"
+                                   initWithTitle:DONE
                                    style:UIBarButtonItemStyleBordered
                                    target:self action:@selector(onDone:)];
     
@@ -40,7 +41,7 @@
     
     }
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:@"Cancel"
+                                     initWithTitle:CANCEL
                                      style:UIBarButtonItemStyleBordered
                                      target:self action:@selector(onCancel:)];
     
@@ -77,8 +78,11 @@
 
 -(void)onCancel:(id)sender{
     
-    [self.delegate imagePickerControllerDidCancel:self];
-   
+    
+    if([self.delegate respondsToSelector:@selector(imagePickerControllerDidCancel:)])
+        [self.delegate imagePickerControllerDidCancel:self];
+   else
+       [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -118,7 +122,7 @@
 
 -(void)finishPickingImages{
     
-    [self.delegate imagePickerController:self didFinishPickingImages:[self.assetCollection getSelectedAssets]];
+    [self.delegate imagePickerController:self didFinishPickingImagesWithURL:[self.assetCollection getSelectedAssets]];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

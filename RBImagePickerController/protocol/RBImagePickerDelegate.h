@@ -12,9 +12,12 @@
 
 @protocol RBImagePickerDelegate <NSObject>
 
-@required
--(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images;
 
+@optional
+-(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images __deprecated_msg("This method is replaced with new delegate method returning image assset urls");
+
+@required
+-(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImagesWithURL:(NSArray *)imageURLS;
 
 @optional
 -(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker;

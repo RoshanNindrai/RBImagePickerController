@@ -8,6 +8,7 @@
 
 #import "RBViewController.h"
 
+
 @interface RBViewController ()
 
 @end
@@ -21,6 +22,7 @@
     self.imagePicker.delegate = self;
     self.imagePicker.dataSource = self;
     self.imagePicker.selectionType = RBMultipleImageSelectionType;
+    self.imagePicker.title = @"Custom Title";
     self.imagePicker.navigationController.navigationItem.leftBarButtonItem.title = @"no";
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -31,18 +33,22 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images{
+
+-(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImagesWithURL:(NSArray *)imageURLS{
     
     // the image picker is desmissed internally.
-    for (UIImage *image in images) {
-        NSLog(@"%@", image);
+    for (NSURL *imageURL in imageURLS) {
+    
+        NSLog(@"image url %@", imageURL);
+        
+        
     }
     
 }
 
 -(void)imagePickerControllerDidCancel:(RBImagePickerController *)imagePicker{
     
-     [self dismissViewControllerAnimated:YES completion:nil];
+    [imagePicker dismissViewControllerAnimated:YES completion:nil];
     
 }
 
@@ -65,5 +71,7 @@
     return 0;
     
 }
+
+
 
 @end

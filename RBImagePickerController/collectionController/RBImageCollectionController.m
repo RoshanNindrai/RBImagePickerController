@@ -222,9 +222,9 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
     
     ALAsset *asset = self.assets[indexPath.row];
-    ALAssetRepresentation *defaultRep = [asset defaultRepresentation];
-    UIImage *image = [UIImage imageWithCGImage:[defaultRep fullScreenImage] scale:[defaultRep scale] orientation:0];
-    [self.selected_images setObject:image forKey:indexPath];
+    // ALAssetRepresentation *defaultRep = [asset defaultRepresentation];
+    //UIImage *image = [UIImage imageWithCGImage:[defaultRep fullScreenImage] scale:[defaultRep scale] orientation:0];
+    [self.selected_images setObject:[[asset defaultRepresentation] url] forKey:indexPath];
     [self.selected_images_index addObject:indexPath];
     
     
