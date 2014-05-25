@@ -39,9 +39,9 @@ Usage
   
         -(NSInteger)imagePickerControllerMaxSelectionCount:(RBImagePickerController *)imagePicker
 
-Once the images are selected from the photo library by the user, the selected images are obtained from the delegate method
+Once the images are selected from the photo library by the user, the selected image asset URLs are obtained from the delegate method
  
-      -(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImages:(NSArray *)images
+      -(void)imagePickerController:(RBImagePickerController *)imagePicker didFinishPickingImagesWithURL:(NSArray *)imageURLS;
       
   The image picker is automatically dismissed once the user is done with selection. If the user wants to cancel without selecting any images The action can be recognized by the following delegate method.
   
